@@ -1,0 +1,553 @@
+
+Alices-MacBook-Pro:Desktop aliceliang$ hadoop jar nyse.jar nyse.Driver /homework5/part2/merged /homework5/part2/output
+18/11/19 23:09:10 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+18/11/19 23:09:11 INFO client.RMProxy: Connecting to ResourceManager at /0.0.0.0:8032
+18/11/19 23:09:12 WARN mapreduce.JobResourceUploader: Hadoop command-line option parsing not performed. Implement the Tool interface and execute your application with ToolRunner to remedy this.
+18/11/19 23:09:12 INFO input.FileInputFormat: Total input files to process : 1
+18/11/19 23:09:12 INFO mapreduce.JobSubmitter: number of splits:4
+18/11/19 23:09:12 INFO Configuration.deprecation: yarn.resourcemanager.system-metrics-publisher.enabled is deprecated. Instead, use yarn.system-metrics-publisher.enabled
+18/11/19 23:09:12 INFO mapreduce.JobSubmitter: Submitting tokens for job: job_1540352164245_0012
+18/11/19 23:09:12 INFO impl.YarnClientImpl: Submitted application application_1540352164245_0012
+18/11/19 23:09:12 INFO mapreduce.Job: The url to track the job: http://Alices-MacBook-Pro.local:8088/proxy/application_1540352164245_0012/
+18/11/19 23:09:12 INFO mapreduce.Job: Running job: job_1540352164245_0012
+18/11/19 23:09:20 INFO mapreduce.Job: Job job_1540352164245_0012 running in uber mode : false
+18/11/19 23:09:20 INFO mapreduce.Job:  map 0% reduce 0%
+18/11/19 23:09:40 INFO mapreduce.Job:  map 17% reduce 0%
+18/11/19 23:09:42 INFO mapreduce.Job:  map 35% reduce 0%
+18/11/19 23:09:43 INFO mapreduce.Job:  map 63% reduce 0%
+18/11/19 23:09:44 INFO mapreduce.Job:  map 95% reduce 0%
+18/11/19 23:09:45 INFO mapreduce.Job:  map 100% reduce 0%
+18/11/19 23:09:58 INFO mapreduce.Job:  map 100% reduce 100%
+18/11/19 23:09:58 INFO mapreduce.Job: Job job_1540352164245_0012 completed successfully
+18/11/19 23:09:58 INFO mapreduce.Job: Counters: 49
+	File System Counters
+		FILE: Number of bytes read=681471582
+		FILE: Number of bytes written=1023196006
+		FILE: Number of read operations=0
+		FILE: Number of large read operations=0
+		FILE: Number of write operations=0
+		HDFS: Number of bytes read=511099651
+		HDFS: Number of bytes written=231740
+		HDFS: Number of read operations=15
+		HDFS: Number of large read operations=0
+		HDFS: Number of write operations=2
+	Job Counters 
+		Launched map tasks=4
+		Launched reduce tasks=1
+		Rack-local map tasks=4
+		Total time spent by all maps in occupied slots (ms)=75942
+		Total time spent by all reduces in occupied slots (ms)=12434
+		Total time spent by all map tasks (ms)=75942
+		Total time spent by all reduce tasks (ms)=12434
+		Total vcore-milliseconds taken by all map tasks=75942
+		Total vcore-milliseconds taken by all reduce tasks=12434
+		Total megabyte-milliseconds taken by all map tasks=77764608
+		Total megabyte-milliseconds taken by all reduce tasks=12732416
+	Map-Reduce Framework
+		Map input records=9211067
+		Map output records=9211066
+		Map output bytes=322313623
+		Map output materialized bytes=340735779
+		Input split bytes=436
+		Combine input records=0
+		Combine output records=0
+		Reduce input groups=2854
+		Reduce shuffle bytes=340735779
+		Reduce input records=9211066
+		Reduce output records=8559
+		Spilled Records=27633198
+		Shuffled Maps =4
+		Failed Shuffles=0
+		Merged Map outputs=4
+		GC time elapsed (ms)=1568
+		CPU time spent (ms)=0
+		Physical memory (bytes) snapshot=0
+		Virtual memory (bytes) snapshot=0
+		Total committed heap usage (bytes)=984088576
+	Shuffle Errors
+		BAD_ID=0
+		CONNECTION=0
+		IO_ERROR=0
+		WRONG_LENGTH=0
+		WRONG_MAP=0
+		WRONG_REDUCE=0
+	File Input Format Counters 
+		Bytes Read=511099215
+	File Output Format Counters 
+		Bytes Written=231740
+Alices-MacBook-Pro:Desktop aliceliang$ hadoop fs -ls /homework5
+18/11/19 23:12:30 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Found 1 items
+drwxr-xr-x   - aliceliang supergroup          0 2018-11-19 23:09 /homework5/part2
+Alices-MacBook-Pro:Desktop aliceliang$ hadoop fs -mkdir /homework5/part3
+18/11/19 23:12:44 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Alices-MacBook-Pro:Desktop aliceliang$ hadoop fs -copyFromLocal access.log /homework5/part3
+18/11/19 23:13:12 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Alices-MacBook-Pro:Desktop aliceliang$ hadoop jar logs.jar ip_secsort.Driver /homework5/part3 /homework5/part3/output
+18/11/19 23:16:06 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+18/11/19 23:16:07 INFO client.RMProxy: Connecting to ResourceManager at /0.0.0.0:8032
+18/11/19 23:16:07 WARN mapreduce.JobResourceUploader: Hadoop command-line option parsing not performed. Implement the Tool interface and execute your application with ToolRunner to remedy this.
+18/11/19 23:16:07 INFO input.FileInputFormat: Total input files to process : 1
+18/11/19 23:16:07 INFO mapreduce.JobSubmitter: number of splits:1
+18/11/19 23:16:07 INFO Configuration.deprecation: yarn.resourcemanager.system-metrics-publisher.enabled is deprecated. Instead, use yarn.system-metrics-publisher.enabled
+18/11/19 23:16:07 INFO mapreduce.JobSubmitter: Submitting tokens for job: job_1540352164245_0013
+18/11/19 23:16:08 INFO impl.YarnClientImpl: Submitted application application_1540352164245_0013
+18/11/19 23:16:08 INFO mapreduce.Job: The url to track the job: http://Alices-MacBook-Pro.local:8088/proxy/application_1540352164245_0013/
+18/11/19 23:16:08 INFO mapreduce.Job: Running job: job_1540352164245_0013
+18/11/19 23:16:16 INFO mapreduce.Job: Job job_1540352164245_0013 running in uber mode : false
+18/11/19 23:16:16 INFO mapreduce.Job:  map 0% reduce 0%
+18/11/19 23:16:24 INFO mapreduce.Job:  map 100% reduce 0%
+18/11/19 23:16:29 INFO mapreduce.Job:  map 100% reduce 100%
+18/11/19 23:16:30 INFO mapreduce.Job: Job job_1540352164245_0013 completed successfully
+18/11/19 23:16:30 INFO mapreduce.Job: Counters: 49
+	File System Counters
+		FILE: Number of bytes read=1376622
+		FILE: Number of bytes written=3149911
+		FILE: Number of read operations=0
+		FILE: Number of large read operations=0
+		FILE: Number of write operations=0
+		HDFS: Number of bytes read=3497780
+		HDFS: Number of bytes written=1236172
+		HDFS: Number of read operations=6
+		HDFS: Number of large read operations=0
+		HDFS: Number of write operations=2
+	Job Counters 
+		Launched map tasks=1
+		Launched reduce tasks=1
+		Rack-local map tasks=1
+		Total time spent by all maps in occupied slots (ms)=4720
+		Total time spent by all reduces in occupied slots (ms)=3125
+		Total time spent by all map tasks (ms)=4720
+		Total time spent by all reduce tasks (ms)=3125
+		Total vcore-milliseconds taken by all map tasks=4720
+		Total vcore-milliseconds taken by all reduce tasks=3125
+		Total megabyte-milliseconds taken by all map tasks=4833280
+		Total megabyte-milliseconds taken by all reduce tasks=3200000
+	Map-Reduce Framework
+		Map input records=35111
+		Map output records=35111
+		Map output bytes=1306394
+		Map output materialized bytes=1376622
+		Input split bytes=113
+		Combine input records=0
+		Combine output records=0
+		Reduce input groups=1945
+		Reduce shuffle bytes=1376622
+		Reduce input records=35111
+		Reduce output records=35111
+		Spilled Records=70222
+		Shuffled Maps =1
+		Failed Shuffles=0
+		Merged Map outputs=1
+		GC time elapsed (ms)=107
+		CPU time spent (ms)=0
+		Physical memory (bytes) snapshot=0
+		Virtual memory (bytes) snapshot=0
+		Total committed heap usage (bytes)=340262912
+	Shuffle Errors
+		BAD_ID=0
+		CONNECTION=0
+		IO_ERROR=0
+		WRONG_LENGTH=0
+		WRONG_MAP=0
+		WRONG_REDUCE=0
+	File Input Format Counters 
+		Bytes Read=3497667
+	File Output Format Counters 
+		Bytes Written=1236172
+Alices-MacBook-Pro:Desktop aliceliang$ hadoop jar nyse.jar nyse.Driver /homework5/part2/merged /homework5/part2/output
+18/11/19 23:23:04 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+18/11/19 23:23:05 INFO client.RMProxy: Connecting to ResourceManager at /0.0.0.0:8032
+18/11/19 23:23:05 WARN mapreduce.JobResourceUploader: Hadoop command-line option parsing not performed. Implement the Tool interface and execute your application with ToolRunner to remedy this.
+18/11/19 23:23:06 INFO input.FileInputFormat: Total input files to process : 1
+18/11/19 23:23:06 INFO mapreduce.JobSubmitter: number of splits:4
+18/11/19 23:23:06 INFO Configuration.deprecation: yarn.resourcemanager.system-metrics-publisher.enabled is deprecated. Instead, use yarn.system-metrics-publisher.enabled
+18/11/19 23:23:06 INFO mapreduce.JobSubmitter: Submitting tokens for job: job_1540352164245_0014
+18/11/19 23:23:06 INFO impl.YarnClientImpl: Submitted application application_1540352164245_0014
+18/11/19 23:23:06 INFO mapreduce.Job: The url to track the job: http://Alices-MacBook-Pro.local:8088/proxy/application_1540352164245_0014/
+18/11/19 23:23:06 INFO mapreduce.Job: Running job: job_1540352164245_0014
+18/11/19 23:23:13 INFO mapreduce.Job: Job job_1540352164245_0014 running in uber mode : false
+18/11/19 23:23:13 INFO mapreduce.Job:  map 0% reduce 0%
+18/11/19 23:23:33 INFO mapreduce.Job:  map 17% reduce 0%
+18/11/19 23:23:35 INFO mapreduce.Job:  map 33% reduce 0%
+18/11/19 23:23:36 INFO mapreduce.Job:  map 51% reduce 0%
+18/11/19 23:23:37 INFO mapreduce.Job:  map 84% reduce 0%
+18/11/19 23:23:38 INFO mapreduce.Job:  map 92% reduce 0%
+18/11/19 23:23:39 INFO mapreduce.Job:  map 100% reduce 0%
+18/11/19 23:23:53 INFO mapreduce.Job:  map 100% reduce 100%
+18/11/19 23:23:53 INFO mapreduce.Job: Job job_1540352164245_0014 completed successfully
+18/11/19 23:23:53 INFO mapreduce.Job: Counters: 49
+	File System Counters
+		FILE: Number of bytes read=681471582
+		FILE: Number of bytes written=1023195991
+		FILE: Number of read operations=0
+		FILE: Number of large read operations=0
+		FILE: Number of write operations=0
+		HDFS: Number of bytes read=511099651
+		HDFS: Number of bytes written=231740
+		HDFS: Number of read operations=15
+		HDFS: Number of large read operations=0
+		HDFS: Number of write operations=2
+	Job Counters 
+		Launched map tasks=4
+		Launched reduce tasks=1
+		Rack-local map tasks=4
+		Total time spent by all maps in occupied slots (ms)=81217
+		Total time spent by all reduces in occupied slots (ms)=13221
+		Total time spent by all map tasks (ms)=81217
+		Total time spent by all reduce tasks (ms)=13221
+		Total vcore-milliseconds taken by all map tasks=81217
+		Total vcore-milliseconds taken by all reduce tasks=13221
+		Total megabyte-milliseconds taken by all map tasks=83166208
+		Total megabyte-milliseconds taken by all reduce tasks=13538304
+	Map-Reduce Framework
+		Map input records=9211067
+		Map output records=9211066
+		Map output bytes=322313623
+		Map output materialized bytes=340735779
+		Input split bytes=436
+		Combine input records=0
+		Combine output records=0
+		Reduce input groups=2854
+		Reduce shuffle bytes=340735779
+		Reduce input records=9211066
+		Reduce output records=8559
+		Spilled Records=27633198
+		Shuffled Maps =4
+		Failed Shuffles=0
+		Merged Map outputs=4
+		GC time elapsed (ms)=1914
+		CPU time spent (ms)=0
+		Physical memory (bytes) snapshot=0
+		Virtual memory (bytes) snapshot=0
+		Total committed heap usage (bytes)=986710016
+	Shuffle Errors
+		BAD_ID=0
+		CONNECTION=0
+		IO_ERROR=0
+		WRONG_LENGTH=0
+		WRONG_MAP=0
+		WRONG_REDUCE=0
+	File Input Format Counters 
+		Bytes Read=511099215
+	File Output Format Counters 
+		Bytes Written=231740
+Alices-MacBook-Pro:Desktop aliceliang$ hadoop jar nyse.jar nyse.Driver /homework5/part2/merged /homework5/part2/output
+18/11/19 23:25:33 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+18/11/19 23:25:34 INFO client.RMProxy: Connecting to ResourceManager at /0.0.0.0:8032
+18/11/19 23:25:35 WARN mapreduce.JobResourceUploader: Hadoop command-line option parsing not performed. Implement the Tool interface and execute your application with ToolRunner to remedy this.
+18/11/19 23:25:35 INFO input.FileInputFormat: Total input files to process : 1
+18/11/19 23:25:35 INFO mapreduce.JobSubmitter: number of splits:4
+18/11/19 23:25:35 INFO Configuration.deprecation: yarn.resourcemanager.system-metrics-publisher.enabled is deprecated. Instead, use yarn.system-metrics-publisher.enabled
+18/11/19 23:25:35 INFO mapreduce.JobSubmitter: Submitting tokens for job: job_1540352164245_0015
+18/11/19 23:25:35 INFO impl.YarnClientImpl: Submitted application application_1540352164245_0015
+18/11/19 23:25:35 INFO mapreduce.Job: The url to track the job: http://Alices-MacBook-Pro.local:8088/proxy/application_1540352164245_0015/
+18/11/19 23:25:35 INFO mapreduce.Job: Running job: job_1540352164245_0015
+18/11/19 23:25:42 INFO mapreduce.Job: Job job_1540352164245_0015 running in uber mode : false
+18/11/19 23:25:42 INFO mapreduce.Job:  map 0% reduce 0%
+18/11/19 23:26:01 INFO mapreduce.Job:  map 50% reduce 0%
+18/11/19 23:26:02 INFO mapreduce.Job:  map 100% reduce 0%
+18/11/19 23:26:16 INFO mapreduce.Job:  map 100% reduce 100%
+18/11/19 23:26:16 INFO mapreduce.Job: Job job_1540352164245_0015 completed successfully
+18/11/19 23:26:17 INFO mapreduce.Job: Counters: 50
+	File System Counters
+		FILE: Number of bytes read=681471582
+		FILE: Number of bytes written=1023196006
+		FILE: Number of read operations=0
+		FILE: Number of large read operations=0
+		FILE: Number of write operations=0
+		HDFS: Number of bytes read=511099651
+		HDFS: Number of bytes written=418696
+		HDFS: Number of read operations=15
+		HDFS: Number of large read operations=0
+		HDFS: Number of write operations=2
+	Job Counters 
+		Killed map tasks=1
+		Launched map tasks=4
+		Launched reduce tasks=1
+		Rack-local map tasks=4
+		Total time spent by all maps in occupied slots (ms)=60810
+		Total time spent by all reduces in occupied slots (ms)=12343
+		Total time spent by all map tasks (ms)=60810
+		Total time spent by all reduce tasks (ms)=12343
+		Total vcore-milliseconds taken by all map tasks=60810
+		Total vcore-milliseconds taken by all reduce tasks=12343
+		Total megabyte-milliseconds taken by all map tasks=62269440
+		Total megabyte-milliseconds taken by all reduce tasks=12639232
+	Map-Reduce Framework
+		Map input records=9211067
+		Map output records=9211066
+		Map output bytes=322313623
+		Map output materialized bytes=340735779
+		Input split bytes=436
+		Combine input records=0
+		Combine output records=0
+		Reduce input groups=2854
+		Reduce shuffle bytes=340735779
+		Reduce input records=9211066
+		Reduce output records=8559
+		Spilled Records=27633198
+		Shuffled Maps =4
+		Failed Shuffles=0
+		Merged Map outputs=4
+		GC time elapsed (ms)=1079
+		CPU time spent (ms)=0
+		Physical memory (bytes) snapshot=0
+		Virtual memory (bytes) snapshot=0
+		Total committed heap usage (bytes)=986710016
+	Shuffle Errors
+		BAD_ID=0
+		CONNECTION=0
+		IO_ERROR=0
+		WRONG_LENGTH=0
+		WRONG_MAP=0
+		WRONG_REDUCE=0
+	File Input Format Counters 
+		Bytes Read=511099215
+	File Output Format Counters 
+		Bytes Written=418696
+Alices-MacBook-Pro:Desktop aliceliang$ hadoop fs -ls /homework5
+18/11/19 23:28:08 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Found 2 items
+drwxr-xr-x   - aliceliang supergroup          0 2018-11-19 23:25 /homework5/part2
+drwxr-xr-x   - aliceliang supergroup          0 2018-11-19 23:16 /homework5/part3
+Alices-MacBook-Pro:Desktop aliceliang$ hadoop fs -mkdir /homework5/part4
+18/11/19 23:28:16 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Alices-MacBook-Pro:Desktop aliceliang$ hadoop jar nyse2.jar nyse.Driver /homework5/part2/merged /homework5/part4/output
+18/11/19 23:28:38 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+18/11/19 23:28:38 INFO client.RMProxy: Connecting to ResourceManager at /0.0.0.0:8032
+18/11/19 23:28:39 WARN mapreduce.JobResourceUploader: Hadoop command-line option parsing not performed. Implement the Tool interface and execute your application with ToolRunner to remedy this.
+18/11/19 23:28:39 INFO input.FileInputFormat: Total input files to process : 1
+18/11/19 23:28:39 INFO mapreduce.JobSubmitter: number of splits:4
+18/11/19 23:28:39 INFO Configuration.deprecation: yarn.resourcemanager.system-metrics-publisher.enabled is deprecated. Instead, use yarn.system-metrics-publisher.enabled
+18/11/19 23:28:39 INFO mapreduce.JobSubmitter: Submitting tokens for job: job_1540352164245_0016
+18/11/19 23:28:39 INFO impl.YarnClientImpl: Submitted application application_1540352164245_0016
+18/11/19 23:28:39 INFO mapreduce.Job: The url to track the job: http://Alices-MacBook-Pro.local:8088/proxy/application_1540352164245_0016/
+18/11/19 23:28:39 INFO mapreduce.Job: Running job: job_1540352164245_0016
+18/11/19 23:28:48 INFO mapreduce.Job: Job job_1540352164245_0016 running in uber mode : false
+18/11/19 23:28:48 INFO mapreduce.Job:  map 0% reduce 0%
+18/11/19 23:29:07 INFO mapreduce.Job:  map 9% reduce 0%
+18/11/19 23:29:09 INFO mapreduce.Job:  map 19% reduce 0%
+18/11/19 23:29:10 INFO mapreduce.Job:  map 31% reduce 0%
+18/11/19 23:29:12 INFO mapreduce.Job:  map 47% reduce 0%
+18/11/19 23:29:13 INFO mapreduce.Job:  map 64% reduce 0%
+18/11/19 23:29:14 INFO mapreduce.Job:  map 86% reduce 0%
+18/11/19 23:29:15 INFO mapreduce.Job:  map 100% reduce 0%
+18/11/19 23:29:19 INFO mapreduce.Job:  map 100% reduce 100%
+18/11/19 23:29:19 INFO mapreduce.Job: Job job_1540352164245_0016 completed successfully
+18/11/19 23:29:19 INFO mapreduce.Job: Counters: 50
+	File System Counters
+		FILE: Number of bytes read=2750
+		FILE: Number of bytes written=995148
+		FILE: Number of read operations=0
+		FILE: Number of large read operations=0
+		FILE: Number of write operations=0
+		HDFS: Number of bytes read=511099651
+		HDFS: Number of bytes written=1947
+		HDFS: Number of read operations=15
+		HDFS: Number of large read operations=0
+		HDFS: Number of write operations=2
+	Job Counters 
+		Killed map tasks=1
+		Launched map tasks=4
+		Launched reduce tasks=1
+		Rack-local map tasks=4
+		Total time spent by all maps in occupied slots (ms)=87825
+		Total time spent by all reduces in occupied slots (ms)=3449
+		Total time spent by all map tasks (ms)=87825
+		Total time spent by all reduce tasks (ms)=3449
+		Total vcore-milliseconds taken by all map tasks=87825
+		Total vcore-milliseconds taken by all reduce tasks=3449
+		Total megabyte-milliseconds taken by all map tasks=89932800
+		Total megabyte-milliseconds taken by all reduce tasks=3531776
+	Map-Reduce Framework
+		Map input records=9211067
+		Map output records=9211031
+		Map output bytes=110532372
+		Map output materialized bytes=2768
+		Input split bytes=436
+		Combine input records=9211031
+		Combine output records=196
+		Reduce input groups=49
+		Reduce shuffle bytes=2768
+		Reduce input records=196
+		Reduce output records=49
+		Spilled Records=392
+		Shuffled Maps =4
+		Failed Shuffles=0
+		Merged Map outputs=4
+		GC time elapsed (ms)=2931
+		CPU time spent (ms)=0
+		Physical memory (bytes) snapshot=0
+		Virtual memory (bytes) snapshot=0
+		Total committed heap usage (bytes)=982515712
+	Shuffle Errors
+		BAD_ID=0
+		CONNECTION=0
+		IO_ERROR=0
+		WRONG_LENGTH=0
+		WRONG_MAP=0
+		WRONG_REDUCE=0
+	File Input Format Counters 
+		Bytes Read=511099215
+	File Output Format Counters 
+		Bytes Written=1947
+Alices-MacBook-Pro:Desktop aliceliang$ hadoop fs -ls /homework5
+18/11/19 23:32:18 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Found 3 items
+drwxr-xr-x   - aliceliang supergroup          0 2018-11-19 23:25 /homework5/part2
+drwxr-xr-x   - aliceliang supergroup          0 2018-11-19 23:16 /homework5/part3
+drwxr-xr-x   - aliceliang supergroup          0 2018-11-19 23:28 /homework5/part4
+Alices-MacBook-Pro:Desktop aliceliang$ hadoop fs -mkdir /homework5/part5
+18/11/19 23:32:25 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Alices-MacBook-Pro:Desktop aliceliang$ hadoop fs -mkdir /homework5/part6
+18/11/19 23:32:29 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Alices-MacBook-Pro:Desktop aliceliang$ hadoop fs -mkdir /homework5/part5/movies
+18/11/19 23:33:23 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Alices-MacBook-Pro:Desktop aliceliang$ hadoop fs -copyFromLocal ratings.dat /homework5/part5/movies
+18/11/19 23:33:34 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Alices-MacBook-Pro:Desktop aliceliang$ hadoop jar movie.jar summerization.Driver /homework5/part5/movies /homework5/part5/output
+18/11/19 23:34:24 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+18/11/19 23:34:25 INFO client.RMProxy: Connecting to ResourceManager at /0.0.0.0:8032
+18/11/19 23:34:25 WARN mapreduce.JobResourceUploader: Hadoop command-line option parsing not performed. Implement the Tool interface and execute your application with ToolRunner to remedy this.
+18/11/19 23:34:25 INFO input.FileInputFormat: Total input files to process : 1
+18/11/19 23:34:25 INFO mapreduce.JobSubmitter: number of splits:1
+18/11/19 23:34:25 INFO Configuration.deprecation: yarn.resourcemanager.system-metrics-publisher.enabled is deprecated. Instead, use yarn.system-metrics-publisher.enabled
+18/11/19 23:34:25 INFO mapreduce.JobSubmitter: Submitting tokens for job: job_1540352164245_0017
+18/11/19 23:34:26 INFO impl.YarnClientImpl: Submitted application application_1540352164245_0017
+18/11/19 23:34:26 INFO mapreduce.Job: The url to track the job: http://Alices-MacBook-Pro.local:8088/proxy/application_1540352164245_0017/
+18/11/19 23:34:26 INFO mapreduce.Job: Running job: job_1540352164245_0017
+18/11/19 23:34:34 INFO mapreduce.Job: Job job_1540352164245_0017 running in uber mode : false
+18/11/19 23:34:34 INFO mapreduce.Job:  map 0% reduce 0%
+18/11/19 23:34:43 INFO mapreduce.Job:  map 100% reduce 0%
+18/11/19 23:34:51 INFO mapreduce.Job:  map 100% reduce 100%
+18/11/19 23:34:51 INFO mapreduce.Job: Job job_1540352164245_0017 completed successfully
+18/11/19 23:34:51 INFO mapreduce.Job: Counters: 49
+	File System Counters
+		FILE: Number of bytes read=14002932
+		FILE: Number of bytes written=28401431
+		FILE: Number of read operations=0
+		FILE: Number of large read operations=0
+		FILE: Number of write operations=0
+		HDFS: Number of bytes read=24594252
+		HDFS: Number of bytes written=150563
+		HDFS: Number of read operations=6
+		HDFS: Number of large read operations=0
+		HDFS: Number of write operations=2
+	Job Counters 
+		Launched map tasks=1
+		Launched reduce tasks=1
+		Rack-local map tasks=1
+		Total time spent by all maps in occupied slots (ms)=5957
+		Total time spent by all reduces in occupied slots (ms)=4439
+		Total time spent by all map tasks (ms)=5957
+		Total time spent by all reduce tasks (ms)=4439
+		Total vcore-milliseconds taken by all map tasks=5957
+		Total vcore-milliseconds taken by all reduce tasks=4439
+		Total megabyte-milliseconds taken by all map tasks=6099968
+		Total megabyte-milliseconds taken by all reduce tasks=4545536
+	Map-Reduce Framework
+		Map input records=1000209
+		Map output records=1000209
+		Map output bytes=12002508
+		Map output materialized bytes=14002932
+		Input split bytes=121
+		Combine input records=0
+		Combine output records=0
+		Reduce input groups=3706
+		Reduce shuffle bytes=14002932
+		Reduce input records=1000209
+		Reduce output records=3706
+		Spilled Records=2000418
+		Shuffled Maps =1
+		Failed Shuffles=0
+		Merged Map outputs=1
+		GC time elapsed (ms)=160
+		CPU time spent (ms)=0
+		Physical memory (bytes) snapshot=0
+		Virtual memory (bytes) snapshot=0
+		Total committed heap usage (bytes)=348127232
+	Shuffle Errors
+		BAD_ID=0
+		CONNECTION=0
+		IO_ERROR=0
+		WRONG_LENGTH=0
+		WRONG_MAP=0
+		WRONG_REDUCE=0
+	File Input Format Counters 
+		Bytes Read=24594131
+	File Output Format Counters 
+		Bytes Written=150563
+Alices-MacBook-Pro:Desktop aliceliang$ hadoop jar movie2.jar summerization.Driver /homework5/part5/movies /homework5/part6/output
+18/11/19 23:36:58 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+18/11/19 23:36:59 INFO client.RMProxy: Connecting to ResourceManager at /0.0.0.0:8032
+18/11/19 23:37:00 WARN mapreduce.JobResourceUploader: Hadoop command-line option parsing not performed. Implement the Tool interface and execute your application with ToolRunner to remedy this.
+18/11/19 23:37:00 INFO input.FileInputFormat: Total input files to process : 1
+18/11/19 23:37:00 INFO mapreduce.JobSubmitter: number of splits:1
+18/11/19 23:37:00 INFO Configuration.deprecation: yarn.resourcemanager.system-metrics-publisher.enabled is deprecated. Instead, use yarn.system-metrics-publisher.enabled
+18/11/19 23:37:00 INFO mapreduce.JobSubmitter: Submitting tokens for job: job_1540352164245_0018
+18/11/19 23:37:00 INFO impl.YarnClientImpl: Submitted application application_1540352164245_0018
+18/11/19 23:37:00 INFO mapreduce.Job: The url to track the job: http://Alices-MacBook-Pro.local:8088/proxy/application_1540352164245_0018/
+18/11/19 23:37:00 INFO mapreduce.Job: Running job: job_1540352164245_0018
+18/11/19 23:37:07 INFO mapreduce.Job: Job job_1540352164245_0018 running in uber mode : false
+18/11/19 23:37:07 INFO mapreduce.Job:  map 0% reduce 0%
+18/11/19 23:37:20 INFO mapreduce.Job:  map 100% reduce 0%
+18/11/19 23:37:26 INFO mapreduce.Job:  map 100% reduce 100%
+18/11/19 23:37:26 INFO mapreduce.Job: Job job_1540352164245_0018 completed successfully
+18/11/19 23:37:27 INFO mapreduce.Job: Counters: 49
+	File System Counters
+		FILE: Number of bytes read=277540
+		FILE: Number of bytes written=951013
+		FILE: Number of read operations=0
+		FILE: Number of large read operations=0
+		FILE: Number of write operations=0
+		HDFS: Number of bytes read=24594252
+		HDFS: Number of bytes written=153126
+		HDFS: Number of read operations=6
+		HDFS: Number of large read operations=0
+		HDFS: Number of write operations=2
+	Job Counters 
+		Launched map tasks=1
+		Launched reduce tasks=1
+		Rack-local map tasks=1
+		Total time spent by all maps in occupied slots (ms)=9456
+		Total time spent by all reduces in occupied slots (ms)=3493
+		Total time spent by all map tasks (ms)=9456
+		Total time spent by all reduce tasks (ms)=3493
+		Total vcore-milliseconds taken by all map tasks=9456
+		Total vcore-milliseconds taken by all reduce tasks=3493
+		Total megabyte-milliseconds taken by all map tasks=9682944
+		Total megabyte-milliseconds taken by all reduce tasks=3576832
+	Map-Reduce Framework
+		Map input records=1000209
+		Map output records=1000209
+		Map output bytes=23004807
+		Map output materialized bytes=277540
+		Input split bytes=121
+		Combine input records=1000209
+		Combine output records=3706
+		Reduce input groups=3706
+		Reduce shuffle bytes=277540
+		Reduce input records=3706
+		Reduce output records=3706
+		Spilled Records=7412
+		Shuffled Maps =1
+		Failed Shuffles=0
+		Merged Map outputs=1
+		GC time elapsed (ms)=233
+		CPU time spent (ms)=0
+		Physical memory (bytes) snapshot=0
+		Virtual memory (bytes) snapshot=0
+		Total committed heap usage (bytes)=357040128
+	Shuffle Errors
+		BAD_ID=0
+		CONNECTION=0
+		IO_ERROR=0
+		WRONG_LENGTH=0
+		WRONG_MAP=0
+		WRONG_REDUCE=0
+	File Input Format Counters 
+		Bytes Read=24594131
+	File Output Format Counters 
+		Bytes Written=153126
+Alices-MacBook-Pro:Desktop aliceliang$ 

@@ -1,0 +1,77 @@
+# PART 4: find out the average stock price of each price of all stocks 
+var map3 = function () {
+    var value = {
+        count: 1,
+        highprice: this.stock_price_high,
+        lowprice: this.stock_price_low,
+        openprice: this.stock_price_open,
+        closeprice: this.stock_price_close,
+        adjcloseprice: this.stock_price_adj_close
+    }
+	emit(this.stock_symbol, value);
+};
+
+var reduce3 = function (key, values){
+    var obj = {
+        count: 0,
+        highprice: 0,
+        lowprice: 0,
+        openprice: 0,
+        closeprice: 0,
+        adjcloseprice: 0
+    };
+	values.forEach(function(value){
+        obj.count += value.count;
+        obj.highprice += value.highprice;
+        obj.lowprice += value.lowprice;
+        obj.openprice += value.openprice;
+        obj.closeprice += value.closeprice;
+        obj.adjcloseprice += value.adjcloseprice;
+    });
+	return obj;
+};
+
+var final3 = function (key, rval){
+	obj = {
+        aver_high: rval.highprice/rval.count,
+        aver_low: rval.lowprice/rval.count,
+        aver_open: rval.openprice/rval.count,
+        aver_close: rval.closeprice/rval.count,
+        aver_adj_close: rval.adjcloseprice/rval.count
+    }
+	return obj;
+};
+
+db.nyse.mapReduce(map3, reduce3,{out:"nyse_all_avg", finalize:final3})
+{
+        "result" : "nyse_all_avg",
+        "timeMillis" : 143783,
+        "counts" : {
+                "input" : 9211031,
+                "emit" : 9211031,
+                "reduce" : 94955,
+                "output" : 2853
+        },
+        "ok" : 1
+}
+
+db.nyse_all_avg.find().limit(15)
+{ "_id" : "AA", "value" : { "aver_high" : 52.459682054670246, "aver_low" : 51.37381451812719, "aver_open" : 51.91400776282121, "aver_close" : 51.91159715913802, "aver_adj_close" : 8.429698571310603 } }
+{ "_id" : "AAI", "value" : { "aver_high" : 10.518446478515235, "aver_low" : 10.008199847444757, "aver_open" : 10.267406559878014, "aver_close" : 10.268777015001353, "aver_adj_close" : 8.628881261123869 } }
+{ "_id" : "AAN", "value" : { "aver_high" : 19.84759364627762, "aver_low" : 19.21948790896139, "aver_open" : 19.534039829302777, "aver_close" : 19.548878615457358, "aver_adj_close" : 12.75188715030822 } }
+{ "_id" : "AAP", "value" : { "aver_high" : 44.721311953352796, "aver_low" : 43.57838192419825, "aver_open" : 44.15946064139941, "aver_close" : 44.16792031098155, "aver_adj_close" : 30.890646258503377 } }
+{ "_id" : "AAR", "value" : { "aver_high" : 19.208936170212834, "aver_low" : 18.733324468085062, "aver_open" : 18.97617021276598, "aver_close" : 18.982074468085113, "aver_adj_close" : 10.811094224923998 } }
+{ "_id" : "AAV", "value" : { "aver_high" : 12.498480836236944, "aver_low" : 12.134369337979102, "aver_open" : 12.332662020905923, "aver_close" : 12.323024390243903, "aver_adj_close" : 8.695198606271774 } }
+{ "_id" : "AB", "value" : { "aver_high" : 30.64627297543216, "aver_low" : 29.83676979071878, "aver_open" : 30.250746132847876, "aver_close" : 30.259244767970632, "aver_adj_close" : 18.37396360327572 } }
+{ "_id" : "ABA", "value" : { "aver_high" : 25.99447019867549, "aver_low" : 25.612075055187663, "aver_open" : 25.82643487858723, "aver_close" : 25.813885209713046, "aver_adj_close" : 23.268211920529808 } }
+{ "_id" : "ABB", "value" : { "aver_high" : 12.583610986042329, "aver_low" : 12.278072940117072, "aver_open" : 12.429693831607375, "aver_close" : 12.447982890589829, "aver_adj_close" : 11.515038271049114 } }
+{ "_id" : "ABC", "value" : { "aver_high" : 47.7895740691136, "aver_low" : 46.569000803643505, "aver_open" : 47.173793195821354, "aver_close" : 47.188874899544885, "aver_adj_close" : 12.859512456469313 } }
+{ "_id" : "ABD", "value" : { "aver_high" : 15.721916592724055, "aver_low" : 15.177267080745343, "aver_open" : 15.445918367346918, "aver_close" : 15.456131322094043, "aver_adj_close" : 15.456131322094043 } }
+{ "_id" : "ABG", "value" : { "aver_high" : 15.429047379032307, "aver_low" : 14.857011088709642, "aver_open" : 15.14934979838712, "aver_close" : 15.14781754032261, "aver_adj_close" : 14.023084677419353 } }
+{ "_id" : "ABK", "value" : { "aver_high" : 51.31720845792452, "aver_low" : 50.21371208885143, "aver_open" : 50.76462836394748, "aver_close" : 50.77681332763832, "aver_adj_close" : 35.26853695002147 } }
+{ "_id" : "ABM", "value" : { "aver_high" : 24.528461061122712, "aver_low" : 24.07634657151675, "aver_open" : 24.286892646602062, "aver_close" : 24.313192677629054, "aver_adj_close" : 8.883591374495849 } }
+{ "_id" : "ABR", "value" : { "aver_high" : 18.430806896551726, "aver_low" : 17.89760000000001, "aver_open" : 18.18032413793104, "aver_close" : 18.15295862068968, "aver_adj_close" : 13.131979310344807 } }
+{ "_id" : "ABT", "value" : { "aver_high" : 48.188009450679914, "aver_low" : 47.11584613112874, "aver_open" : 47.63996603662189, "aver_close" : 47.682271116362, "aver_adj_close" : 21.614044595392784 } }
+{ "_id" : "ABV", "value" : { "aver_high" : 31.986431181486065, "aver_low" : 31.025137028014516, "aver_open" : 31.512981120584556, "aver_close" : 31.51876370280141, "aver_adj_close" : 27.508319123020655 } }
+{ "_id" : "ABVT", "value" : { "aver_high" : 49.196723684210596, "aver_low" : 48.12642763157899, "aver_open" : 48.509447368421114, "aver_close" : 48.86505263157902, "aver_adj_close" : 26.365177631578913 } }
+{ "_id" : "ABX", "value" : { "aver_high" : 22.683009677931274, "aver_low" : 22.01736633349196, "aver_open" : 22.354877042678165, "aver_close" : 22.349152784388483, "aver_adj_close" : 16.886469934951585 } }

@@ -1,0 +1,67 @@
+package fileprocessingapp;
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.util.StringTokenizer;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+public class FileProcessingApp {
+
+    public static void main(String[] args) {
+        try {
+            File inputFile = new File("D:\\NYSE\\", "NYSE_daily_prices_A.csv");
+            //FileInputStream fis = new FileInputStream(inputFile);
+
+            BufferedReader in = new BufferedReader(new FileReader(inputFile));
+            String line;
+            while ((line = in.readLine()) != null) {
+                String[] tokens = line.split(",");
+                String exchange = tokens[0];
+                String stockSymbol = tokens[1];
+                String date = tokens[2];
+
+                System.out.println("EXCHANGE: " + exchange + "\nSTOCK SYMBOL: " + stockSymbol + "\nDATE: " + date);
+                System.out.println("---------------------------------");
+
+                //System.out.println(line);
+                /*
+                StringTokenizer st = new StringTokenizer(line, ",");
+
+                //SKIP THE FIRST LINE
+                String heading1 = st.nextToken();
+                st.nextToken();
+                st.nextToken();
+                st.nextToken();
+                st.nextToken();
+                st.nextToken();
+                st.nextToken();
+                st.nextToken();
+                st.nextToken();
+
+                while (st.hasMoreTokens()) {
+                    String exchange = st.nextToken();
+                    String stockSymbol = st.nextToken();
+                    String date = st.nextToken();
+                    st.nextToken();
+                    st.nextToken();
+                    st.nextToken();
+                    st.nextToken();
+                    st.nextToken();
+                    st.nextToken();
+
+                    System.out.println("EXCHANGE: " + exchange + "\nSTOCK SYMBOL: " + stockSymbol + "\nDATE: " + date);
+                    System.out.println("---------------------------------");
+                }*/
+            }
+
+            System.out.println("File Opened!");
+        } catch (Exception ex) {
+            System.out.println("FileNotFoundException: " + ex.getMessage());
+        }
+
+    }
+}

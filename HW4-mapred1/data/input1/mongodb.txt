@@ -1,0 +1,62 @@
+mongodb
+
+//settings
+cd Documents/mongodb4.0.2/bin
+echo $PATH
+killall mongod
+mongod --dbpath ~/Documents/mongodb4.0.2/database
+
+//homework1 is a new database
+use homework1
+
+//games is a new collection
+db.games.insertOne( { name: "firstgame", genre: "firstgenre", rating: 88 } )
+db.games.insertOne( { name: "secondgame", genre: "firstgenre", rating: 70 } )
+db.games.insertOne( { name: "thirdgame", genre: "firstgenre", rating: 55 } )
+db.games.insertOne( { name: "fourthgame", genre: "secondgenre", rating: 30 } )
+db.games.insertOne( { name: "fifthgame", genre: "secondgenre", rating: 66 } )
+
+//get all reconds
+db.games.find()
+
+//get one record
+db.games.findOne()
+
+//get three highest rating
+db.games.find().sort({rating:-1}).limit(3) // for MAX
+db.games.find().sort({rating:+1}).limit(3) // for MIN
+
+//update existing collection
+db.games.update({name:"secondgame"},{$set:{achievements:['Game Master','Speed Demon']}})
+db.games.update({name:"fifthgame"},{$set:{achievements:['Game Master','Speed Demon']}})
+
+//save as update
+db.games.save({_id: ObjectId("5ba252e07ac4c88eeb2d3d02"), name: "firstgame", genre: "firstgenre", rating: 88, achievements: [ "Game Master", "Speed Demon" ] })
+
+//query array
+db.games.find( { achievements: [ "Game Master", "Speed Demon" ] } )
+
+//
+db.games.find( { achievemens: { $exists: true }} )
+
+db.games.drop()
+
+db.games.count()
+
+
+
+//text search indexing 
+db.movies.createIndex({title: "text", genres: "text"}, {weights: {title:10, genres:5}, name: "moviedb_index"});
+db.movies.find({$text: {$search:"actions"}}, {title:1})
+
+
+//linux
+chmod u+x nyse.sh
+
+
+
+
+//help
+help
+db.help()
+db.mycoll.help()

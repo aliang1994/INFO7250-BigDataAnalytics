@@ -1,0 +1,156 @@
+Alices-MacBook-Pro:Desktop aliceliang$ ./nyse.sh
+/Users/aliceliang/CS/7250/HW2/NYSE/NYSE_daily_prices_0.csv
+2018-10-03T00:07:18.255-0400    connected to: localhost
+2018-10-03T00:07:18.256-0400    imported 0 documents
+/Users/aliceliang/CS/7250/HW2/NYSE/NYSE_daily_prices_1.csv
+2018-10-03T00:07:18.278-0400    connected to: localhost
+2018-10-03T00:07:18.278-0400    imported 0 documents
+/Users/aliceliang/CS/7250/HW2/NYSE/NYSE_daily_prices_2.csv
+2018-10-03T00:07:18.299-0400    connected to: localhost
+2018-10-03T00:07:18.299-0400    imported 0 documents
+/Users/aliceliang/CS/7250/HW2/NYSE/NYSE_daily_prices_3.csv
+2018-10-03T00:07:18.323-0400    connected to: localhost
+2018-10-03T00:07:18.323-0400    imported 0 documents
+/Users/aliceliang/CS/7250/HW2/NYSE/NYSE_daily_prices_4.csv
+2018-10-03T00:07:18.343-0400    connected to: localhost
+2018-10-03T00:07:18.344-0400    imported 0 documents
+/Users/aliceliang/CS/7250/HW2/NYSE/NYSE_daily_prices_5.csv
+2018-10-03T00:07:18.365-0400    connected to: localhost
+2018-10-03T00:07:18.365-0400    imported 0 documents
+/Users/aliceliang/CS/7250/HW2/NYSE/NYSE_daily_prices_6.csv
+2018-10-03T00:07:18.385-0400    connected to: localhost
+2018-10-03T00:07:18.385-0400    imported 0 documents
+/Users/aliceliang/CS/7250/HW2/NYSE/NYSE_daily_prices_7.csv
+2018-10-03T00:07:18.408-0400    connected to: localhost
+2018-10-03T00:07:18.409-0400    imported 0 documents
+/Users/aliceliang/CS/7250/HW2/NYSE/NYSE_daily_prices_8.csv
+2018-10-03T00:07:18.429-0400    connected to: localhost
+2018-10-03T00:07:18.430-0400    imported 0 documents
+/Users/aliceliang/CS/7250/HW2/NYSE/NYSE_daily_prices_9.csv
+2018-10-03T00:07:18.450-0400    connected to: localhost
+2018-10-03T00:07:18.451-0400    imported 0 documents
+/Users/aliceliang/CS/7250/HW2/NYSE/NYSE_daily_prices_A.csv
+2018-10-03T00:07:18.475-0400    connected to: localhost
+2018-10-03T00:07:21.472-0400    [#######.................] homework2.nyse       12.6MB/39.1MB (32.2%)
+2018-10-03T00:07:24.475-0400    [###############.........] homework2.nyse       25.2MB/39.1MB (64.5%)
+2018-10-03T00:07:27.473-0400    [#######################.] homework2.nyse       38.0MB/39.1MB (97.1%)
+2018-10-03T00:07:27.746-0400    [########################] homework2.nyse       39.1MB/39.1MB (100.0%)
+2018-10-03T00:07:27.746-0400    imported 735026 documents
+/Users/aliceliang/CS/7250/HW2/NYSE/NYSE_daily_prices_B.csv
+2018-10-03T00:07:27.767-0400    connected to: localhost
+2018-10-03T00:07:30.763-0400    [#########...............] homework2.nyse       12.2MB/30.6MB (39.9%)
+2018-10-03T00:07:33.762-0400    [###################.....] homework2.nyse       24.5MB/30.6MB (80.3%)
+2018-10-03T00:07:35.233-0400    [########################] homework2.nyse       30.6MB/30.6MB (100.0%)
+2018-10-03T00:07:35.233-0400    imported 577083 documents
+/Users/aliceliang/CS/7250/HW2/NYSE/NYSE_daily_prices_C.csv
+2018-10-03T00:07:35.254-0400    connected to: localhost
+2018-10-03T00:07:38.249-0400    [######..................] homework2.nyse       12.2MB/43.7MB (27.9%)
+2018-10-03T00:07:41.249-0400    [#############...........] homework2.nyse       24.5MB/43.7MB (56.1%)
+2018-10-03T00:07:44.252-0400    [####################....] homework2.nyse       37.2MB/43.7MB (85.3%)
+2018-10-03T00:07:45.830-0400    [########################] homework2.nyse       43.7MB/43.7MB (100.0%)
+2018-10-03T00:07:45.830-0400    imported 825935 documents
+/Users/aliceliang/CS/7250/HW2/NYSE/NYSE_daily_prices_D.csv
+2018-10-03T00:07:45.851-0400    connected to: localhost
+2018-10-03T00:07:48.847-0400    [################........] homework2.nyse       12.5MB/18.3MB (68.2%)
+2018-10-03T00:07:50.272-0400    [########################] homework2.nyse       18.3MB/18.3MB (100.0%)
+2018-10-03T00:07:50.272-0400    imported 345866 documents
+/Users/aliceliang/CS/7250/HW2/NYSE/NYSE_daily_prices_E.csv
+2018-10-03T00:07:50.295-0400    connected to: localhost
+2018-10-03T00:07:53.291-0400    [##############..........] homework2.nyse       12.4MB/21.1MB (58.8%)
+2018-10-03T00:07:55.433-0400    [########################] homework2.nyse       21.1MB/21.1MB (100.0%)
+2018-10-03T00:07:55.433-0400    imported 396733 documents
+/Users/aliceliang/CS/7250/HW2/NYSE/NYSE_daily_prices_F.csv
+2018-10-03T00:07:55.462-0400    connected to: localhost
+2018-10-03T00:07:58.461-0400    [##################......] homework2.nyse       12.6MB/16.6MB (76.0%)
+2018-10-03T00:07:59.563-0400    [########################] homework2.nyse       16.6MB/16.6MB (100.0%)
+2018-10-03T00:07:59.563-0400    imported 313311 documents
+/Users/aliceliang/CS/7250/HW2/NYSE/NYSE_daily_prices_G.csv
+2018-10-03T00:07:59.586-0400    connected to: localhost
+2018-10-03T00:08:02.581-0400    [##############..........] homework2.nyse       12.6MB/21.6MB (58.4%)
+2018-10-03T00:08:04.814-0400    [########################] homework2.nyse       21.6MB/21.6MB (100.0%)
+2018-10-03T00:08:04.814-0400    imported 410377 documents
+/Users/aliceliang/CS/7250/HW2/NYSE/NYSE_daily_prices_H.csv
+2018-10-03T00:08:04.838-0400    connected to: localhost
+2018-10-03T00:08:07.833-0400    [#############...........] homework2.nyse       12.2MB/22.1MB (55.6%)
+2018-10-03T00:08:10.253-0400    [########################] homework2.nyse       22.1MB/22.1MB (100.0%)
+2018-10-03T00:08:10.253-0400    imported 418057 documents
+/Users/aliceliang/CS/7250/HW2/NYSE/NYSE_daily_prices_I.csv
+2018-10-03T00:08:10.286-0400    connected to: localhost
+2018-10-03T00:08:13.272-0400    [##############..........] homework2.nyse       11.9MB/19.7MB (60.3%)
+2018-10-03T00:08:15.166-0400    [########################] homework2.nyse       19.7MB/19.7MB (100.0%)
+2018-10-03T00:08:15.166-0400    imported 370418 documents
+/Users/aliceliang/CS/7250/HW2/NYSE/NYSE_daily_prices_J.csv
+2018-10-03T00:08:15.188-0400    connected to: localhost
+2018-10-03T00:08:17.408-0400    imported 171430 documents
+/Users/aliceliang/CS/7250/HW2/NYSE/NYSE_daily_prices_K.csv
+2018-10-03T00:08:17.429-0400    connected to: localhost
+2018-10-03T00:08:20.424-0400    [####################....] homework2.nyse       12.2MB/14.1MB (86.3%)
+2018-10-03T00:08:20.895-0400    [########################] homework2.nyse       14.1MB/14.1MB (100.0%)
+2018-10-03T00:08:20.895-0400    imported 267449 documents
+/Users/aliceliang/CS/7250/HW2/NYSE/NYSE_daily_prices_L.csv
+2018-10-03T00:08:20.917-0400    connected to: localhost
+2018-10-03T00:08:23.914-0400    [#######################.] homework2.nyse       12.2MB/12.4MB (99.1%)
+2018-10-03T00:08:23.954-0400    [########################] homework2.nyse       12.4MB/12.4MB (100.0%)
+2018-10-03T00:08:23.954-0400    imported 232697 documents
+/Users/aliceliang/CS/7250/HW2/NYSE/NYSE_daily_prices_M.csv
+2018-10-03T00:08:23.976-0400    connected to: localhost
+2018-10-03T00:08:26.974-0400    [########................] homework2.nyse       12.3MB/36.4MB (33.9%)
+2018-10-03T00:08:29.972-0400    [################........] homework2.nyse       24.8MB/36.4MB (68.1%)
+2018-10-03T00:08:32.815-0400    [########################] homework2.nyse       36.4MB/36.4MB (100.0%)
+2018-10-03T00:08:32.815-0400    imported 689700 documents
+/Users/aliceliang/CS/7250/HW2/NYSE/NYSE_daily_prices_N.csv
+2018-10-03T00:08:32.836-0400    connected to: localhost
+2018-10-03T00:08:35.831-0400    [#########...............] homework2.nyse       11.9MB/30.0MB (39.8%)
+2018-10-03T00:08:38.832-0400    [###################.....] homework2.nyse       24.5MB/30.0MB (81.6%)
+2018-10-03T00:08:40.126-0400    [########################] homework2.nyse       30.0MB/30.0MB (100.0%)
+2018-10-03T00:08:40.126-0400    imported 571106 documents
+/Users/aliceliang/CS/7250/HW2/NYSE/NYSE_daily_prices_O.csv
+2018-10-03T00:08:40.145-0400    connected to: localhost
+2018-10-03T00:08:42.314-0400    imported 160849 documents
+/Users/aliceliang/CS/7250/HW2/NYSE/NYSE_daily_prices_P.csv
+2018-10-03T00:08:42.336-0400    connected to: localhost
+2018-10-03T00:08:45.334-0400    [##########..............] homework2.nyse       12.8MB/30.5MB (41.9%)
+2018-10-03T00:08:48.334-0400    [###################.....] homework2.nyse       25.0MB/30.5MB (82.1%)
+2018-10-03T00:08:49.608-0400    [########################] homework2.nyse       30.5MB/30.5MB (100.0%)
+2018-10-03T00:08:49.608-0400    imported 576136 documents
+/Users/aliceliang/CS/7250/HW2/NYSE/NYSE_daily_prices_Q.csv
+2018-10-03T00:08:49.630-0400    connected to: localhost
+2018-10-03T00:08:49.681-0400    imported 3598 documents
+/Users/aliceliang/CS/7250/HW2/NYSE/NYSE_daily_prices_R.csv
+2018-10-03T00:08:49.704-0400    connected to: localhost
+2018-10-03T00:08:52.704-0400    [##################......] homework2.nyse       12.4MB/16.0MB (77.4%)
+2018-10-03T00:08:53.538-0400    [########################] homework2.nyse       16.0MB/16.0MB (100.0%)
+2018-10-03T00:08:53.539-0400    imported 302533 documents
+/Users/aliceliang/CS/7250/HW2/NYSE/NYSE_daily_prices_S.csv
+2018-10-03T00:08:53.571-0400    connected to: localhost
+2018-10-03T00:08:56.559-0400    [##########..............] homework2.nyse       12.7MB/30.4MB (41.8%)
+2018-10-03T00:08:59.558-0400    [####################....] homework2.nyse       25.5MB/30.4MB (84.0%)
+2018-10-03T00:09:00.696-0400    [########################] homework2.nyse       30.4MB/30.4MB (100.0%)
+2018-10-03T00:09:00.696-0400    imported 572874 documents
+/Users/aliceliang/CS/7250/HW2/NYSE/NYSE_daily_prices_T.csv
+2018-10-03T00:09:00.720-0400    connected to: localhost
+2018-10-03T00:09:03.712-0400    [##########..............] homework2.nyse       12.5MB/27.4MB (45.7%)
+2018-10-03T00:09:06.714-0400    [#####################...] homework2.nyse       24.9MB/27.4MB (90.8%)
+2018-10-03T00:09:07.305-0400    [########################] homework2.nyse       27.4MB/27.4MB (100.0%)
+2018-10-03T00:09:07.305-0400    imported 518114 documents
+/Users/aliceliang/CS/7250/HW2/NYSE/NYSE_daily_prices_U.csv
+2018-10-03T00:09:07.333-0400    connected to: localhost
+2018-10-03T00:09:09.630-0400    imported 179107 documents
+/Users/aliceliang/CS/7250/HW2/NYSE/NYSE_daily_prices_V.csv
+2018-10-03T00:09:09.652-0400    connected to: localhost
+2018-10-03T00:09:11.876-0400    imported 171518 documents
+/Users/aliceliang/CS/7250/HW2/NYSE/NYSE_daily_prices_W.csv
+2018-10-03T00:09:11.896-0400    connected to: localhost
+2018-10-03T00:09:14.896-0400    [###################.....] homework2.nyse       12.4MB/15.2MB (81.7%)
+2018-10-03T00:09:15.543-0400    [########################] homework2.nyse       15.2MB/15.2MB (100.0%)
+2018-10-03T00:09:15.543-0400    imported 285040 documents
+/Users/aliceliang/CS/7250/HW2/NYSE/NYSE_daily_prices_X.csv
+2018-10-03T00:09:15.565-0400    connected to: localhost
+2018-10-03T00:09:16.374-0400    imported 65020 documents
+/Users/aliceliang/CS/7250/HW2/NYSE/NYSE_daily_prices_Y.csv
+2018-10-03T00:09:16.396-0400    connected to: localhost
+2018-10-03T00:09:16.562-0400    imported 12234 documents
+/Users/aliceliang/CS/7250/HW2/NYSE/NYSE_daily_prices_Z.csv
+2018-10-03T00:09:16.583-0400    connected to: localhost
+2018-10-03T00:09:17.078-0400    imported 38820 documents
+Alices-MacBook-Pro:Desktop aliceliang$

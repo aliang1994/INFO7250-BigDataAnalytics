@@ -1,0 +1,21 @@
+db.nyse.createIndex({"stock_symbol":1})
+{
+        "createdCollectionAutomatically" : false,
+        "numIndexesBefore" : 1,
+        "numIndexesAfter" : 2,
+        "ok" : 1
+}
+
+db.nyse.findOne()
+{
+        "_id" : ObjectId("5bb4b951c2df6c2ee14c79f2"),
+        "exchange" : "NYSE",
+        "stock_symbol" : "AEA",
+        "date" : "2010-02-05",
+        "stock_price_open" : 4.42,
+        "stock_price_high" : 4.54,
+        "stock_price_low" : 4.22,
+        "stock_price_close" : 4.41,
+        "stock_volume" : 194300,
+        "stock_price_adj_close" : 4.41
+}

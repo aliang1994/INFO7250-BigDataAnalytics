@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+<!--
+hbase.rootdir is the directory on HDFS for HBase to store the data files.
+This directory needs to be created by you: hadoop fs -mkdir HBaseDataFolderName_ThatYoulike
+
+Also, zookeeper directory must be created in the local file system.
+Then, you point to this directory with hbase.zookeeper.property.dataDir attribute.
+-->
+<configuration>
+<property>
+  <name>hbase.rootdir</name>
+  <value>hdfs://localhost:9000/hbasedata</value>
+</property>
+<property>
+  <name>hbase.cluster.distributed</name>
+  <value>true</value>
+</property>
+<property>
+  <name>hbase.zookeeper.property.dataDir</name>
+  <value>/usr/local/bin/zookeeper</value>
+</property>
+</configuration>

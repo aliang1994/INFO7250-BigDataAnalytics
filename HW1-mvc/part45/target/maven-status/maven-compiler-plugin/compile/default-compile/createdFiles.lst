@@ -1,0 +1,6 @@
+com/hw1/part4/pojo/Movie.class
+com/hw1/part4/pojo/Access.class
+com/hw1/part4/controller/dbController.class
+com/hw1/part4/controller/MovieController.class
+com/hw1/part4/controller/AccessController.class
+com/hw1/part4/dbUtil.class

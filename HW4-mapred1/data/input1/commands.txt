@@ -1,0 +1,63 @@
+conda
+
+conda create --name testenv
+source activate testenv
+source deactivate
+conda update -n base conda
+conda list
+conda info --envs
+conda remove --name myenv --all
+Conda config --set ssl_verify false
+Vim ~/.bash_profile
+
+
+Django 
+
+django-admin startproject project
+python manage.py runserver
+python manage.py runserver localhost:8080
+python manage.py startapp appname
+python manage.py migrate
+python manage.py makemigrations appname
+python manage.py sqlmigrate app1 0001
+python manage.py check
+python manage.py createsuperuser
+
+npm
+npm install
+npm start
+
+
+
+git
+git status
+git add
+git branch -a
+git checkout branchname
+git branch -d loalbranchname
+git clone -b branchname url
+
+
+
+
+Linux 
+ssh aliang@10.47.141.21 
+scp top.cer aliang@10.47.141.21:~
+scp -r node_modules aliang@10.47.141.21:~/app/TA80_APIStore/TA80_APIStore_frontend
+rm -rf my folder
+quota -v 
+export PATH = ""
+export http_proxy = 
+
+Redhat
+Sudo su - pta8app0
+
+
+Ubuntu
+
+sudo apt-get install -y nodejs
+sudo apt-get upgrade
+
+
+
+

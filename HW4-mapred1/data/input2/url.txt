@@ -1,0 +1,7 @@
+http://url12.com 36
+http://url11.com 4
+http://url20.com 36
+http://url1.com 256
+http://url1.com 267
+http://url20.com 66
+http://url11.com 7

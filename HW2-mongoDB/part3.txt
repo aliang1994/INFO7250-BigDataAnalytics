@@ -1,0 +1,195 @@
+# NYSE dataset
+# PART 3: find the average price of stock_price_high values for each stock
+
+3.1
+var map = function () {
+    emit(this.stock_symbol, this.stock_price_high);
+};
+var reduce = function (key, values){
+    var sum = Array.sum(values)
+    var count = 0;
+    values.forEach(function(value){
+        count++;
+    });
+    var avg = sum/count;
+    return avg;
+};
+db.nyse.mapReduce(map, reduce, {out:"nyse_high_avg_part1"})
+{
+    "result" : "nyse_high_avg_part1",
+    "timeMillis" : 73004,
+    "counts" : {
+        "input" : 9211031,
+        "emit" : 9211031,
+        "reduce" : 94955,
+        "output" : 2853
+    },
+    "ok" : 1
+}
+
+db.nyse_high_avg_part1.find()
+{ "_id" : "AA", "value" : 64.25764517961909 }
+{ "_id" : "AAI", "value" : 21.924430217264405 }
+{ "_id" : "AAN", "value" : 7.8418733564163565 }
+{ "_id" : "AAP", "value" : 45.02059490806397 }
+{ "_id" : "AAR", "value" : 22.840275641370557 }
+{ "_id" : "AAV", "value" : 14.410586201427867 }
+{ "_id" : "AB", "value" : 4.039483943511036 }
+{ "_id" : "ABA", "value" : 25.344888423442423 }
+{ "_id" : "ABB", "value" : 17.793833488670774 }
+{ "_id" : "ABC", "value" : 23.226585158003815 }
+{ "_id" : "ABD", "value" : 25.7542127574494 }
+{ "_id" : "ABG", "value" : 17.714408890526496 }
+{ "_id" : "ABK", "value" : 24.141800538033838 }
+{ "_id" : "ABM", "value" : 22.925200870087618 }
+{ "_id" : "ABR", "value" : 19.66737370778101 }
+{ "_id" : "ABT", "value" : 45.67435376734703 }
+{ "_id" : "ABV", "value" : 11.113582725933034 }
+{ "_id" : "ABVT", "value" : 45.6995818252496 }
+{ "_id" : "ABX", "value" : 4.829179077594706 }
+
+
+
+
+
+
+3.2
+var map1 = function () {
+    var value = {
+        count: 1,
+        price: this.stock_price_high,
+    }
+	emit(this.stock_symbol, value);
+};
+
+var reduce1 = function (key, values){
+    var obj = {
+        count: 0,
+        price: 0,
+    };
+	values.forEach(function(value){
+        obj.count += value.count;
+        obj.price += value.price;
+    });
+	return obj;
+};
+
+var final1 = function (key, rval){
+	rval.avg=rval.price/rval.count;
+	return rval.avg;
+};
+
+db.nyse.mapReduce(map1, reduce1,{out:"nyse_high_avg", finalize:final1, limit:200})
+db.nyse.mapReduce(map1, reduce1,{out:"nyse_high_avg", finalize:final1})
+{
+        "result" : "nyse_high_avg",
+        "timeMillis" : 90896,
+        "counts" : {
+                "input" : 9211031,
+                "emit" : 9211031,
+                "reduce" : 94955,
+                "output" : 2853
+        },
+        "ok" : 1
+}
+
+db.nyse_high_avg.find().limit(100)
+{ "_id" : "AA", "value" : 52.459682054670246 }
+{ "_id" : "AAI", "value" : 10.518446478515235 }
+{ "_id" : "AAN", "value" : 19.84759364627762 }
+{ "_id" : "AAP", "value" : 44.721311953352796 }
+{ "_id" : "AAR", "value" : 19.208936170212834 }
+{ "_id" : "AAV", "value" : 12.498480836236944 }
+{ "_id" : "AB", "value" : 30.64627297543216 }
+{ "_id" : "ABA", "value" : 25.99447019867549 }
+{ "_id" : "ABB", "value" : 12.583610986042329 }
+{ "_id" : "ABC", "value" : 47.7895740691136 }
+{ "_id" : "ABD", "value" : 15.721916592724055 }
+{ "_id" : "ABG", "value" : 15.429047379032307 }
+{ "_id" : "ABK", "value" : 51.31720845792452 }
+{ "_id" : "ABM", "value" : 24.528461061122712 }
+{ "_id" : "ABR", "value" : 18.430806896551726 }
+{ "_id" : "ABT", "value" : 48.188009450679914 }
+{ "_id" : "ABV", "value" : 31.986431181486065 }
+{ "_id" : "ABVT", "value" : 49.196723684210596 }
+{ "_id" : "ABX", "value" : 22.683009677931274 }
+{ "_id" : "ACC", "value" : 25.51832005792907 }
+{ "_id" : "ACE", "value" : 42.74092984934086 }
+{ "_id" : "ACF", "value" : 16.523633150039284 }
+{ "_id" : "ACG", "value" : 9.440427184465682 }
+{ "_id" : "ACH", "value" : 42.34210109018824 }
+{ "_id" : "ACI", "value" : 25.873691225471994 }
+{ "_id" : "ACL", "value" : 99.96112903225824 }
+{ "_id" : "ACM", "value" : 27.88095238095239 }
+{ "_id" : "ACN", "value" : 28.57422718808193 }
+{ "_id" : "ACO", "value" : 15.7723444338723 }
+{ "_id" : "ACS", "value" : 47.56931765314052 }
+{ "_id" : "ACV", "value" : 32.5182174992237 }
+{ "_id" : "ADC", "value" : 20.43254024144856 }
+{ "_id" : "ADI", "value" : 29.105212732919252 }
+{ "_id" : "ADM", "value" : 20.14427135678378 }
+{ "_id" : "ADP", "value" : 47.3033968394633 }
+{ "_id" : "ADS", "value" : 42.71497927222472 }
+{ "_id" : "ADX", "value" : 12.929566770186224 }
+{ "_id" : "ADY", "value" : 10.49845261121864 }
+{ "_id" : "AEA", "value" : 10.774021655065743 }
+{ "_id" : "AEB", "value" : 19.118402646502805 }
+{ "_id" : "AEC", "value" : 10.794785801713555 }
+{ "_id" : "AED", "value" : 20.203223062381845 }
+{ "_id" : "AEE", "value" : 42.019641211323325 }
+{ "_id" : "AEF", "value" : 18.29843853820598 }
+{ "_id" : "AEG", "value" : 38.285159376059916 }
+{ "_id" : "AEH", "value" : 20.570042698548264 }
+{ "_id" : "AEL", "value" : 10.25118327974275 }
+{ "_id" : "AEM", "value" : 17.02324277907869 }
+{ "_id" : "AEO", "value" : 26.596461422467904 }
+{ "_id" : "AEP", "value" : 30.007869775712983 }
+{ "_id" : "AER", "value" : 15.982289603960387 }
+{ "_id" : "AES", "value" : 27.52261027061587 }
+{ "_id" : "AET", "value" : 52.05096372560853 }
+{ "_id" : "AEV", "value" : 20.185432098765425 }
+{ "_id" : "AF", "value" : 33.2050723216475 }
+{ "_id" : "AFB", "value" : 14.039554234769678 }
+{ "_id" : "AFC", "value" : 15.706281690140825 }
+{ "_id" : "AFE", "value" : 23.42670642809805 }
+{ "_id" : "AFF", "value" : 15.16308605341246 }
+{ "_id" : "AFG", "value" : 26.640736033106517 }
+{ "_id" : "AFL", "value" : 34.113237577639836 }
+{ "_id" : "AFN", "value" : 6.236791519434621 }
+{ "_id" : "AGC", "value" : 11.009882697947216 }
+{ "_id" : "AGCO", "value" : 25.331215914170862 }
+{ "_id" : "AGD", "value" : 16.082471910112357 }
+{ "_id" : "AGL", "value" : 22.467146425226396 }
+{ "_id" : "AGM", "value" : 28.144506713368393 }
+{ "_id" : "AGN", "value" : 53.40173820981701 }
+{ "_id" : "AGO", "value" : 21.08931459904043 }
+{ "_id" : "AGP", "value" : 33.02739507959482 }
+{ "_id" : "AGU", "value" : 23.261023982754068 }
+{ "_id" : "AHC", "value" : 4.789840954274354 }
+{ "_id" : "AHD", "value" : 20.502174887892394 }
+{ "_id" : "AHL", "value" : 25.49415057915058 }
+{ "_id" : "AHS", "value" : 17.261928467858844 }
+{ "_id" : "AHT", "value" : 8.509518221124155 }
+{ "_id" : "AI", "value" : 9.63978646517742 }
+{ "_id" : "AIB", "value" : 33.623001240181544 }
+{ "_id" : "AIG", "value" : 81.84643737326394 }
+{ "_id" : "AIN", "value" : 21.55624866785075 }
+{ "_id" : "AIQ", "value" : 8.051060252218585 }
+{ "_id" : "AIR", "value" : 17.391043478260823 }
+{ "_id" : "AIT", "value" : 27.238398315658056 }
+{ "_id" : "AIV", "value" : 34.762364657813926 }
+{ "_id" : "AIZ", "value" : 42.33719762062128 }
+{ "_id" : "AJG", "value" : 29.477276980661156 }
+{ "_id" : "AKF", "value" : 19.24436280137777 }
+{ "_id" : "AKP", "value" : 13.982516097077779 }
+{ "_id" : "AKR", "value" : 12.154469100453419 }
+{ "_id" : "AKS", "value" : 20.37469290549009 }
+{ "_id" : "AKT", "value" : 18.571468005018843 }
+{ "_id" : "ALB", "value" : 27.691389788294014 }
+{ "_id" : "ALC", "value" : 11.141127450980383 }
+{ "_id" : "ALD", "value" : 18.241838739863063 }
+{ "_id" : "ALE", "value" : 31.135276282740605 }
+{ "_id" : "ALEX", "value" : 28.157235294117655 }
+{ "_id" : "ALF", "value" : 24.60999310344829 }
+{ "_id" : "ALG", "value" : 16.669894242068175 }
+{ "_id" : "ALJ", "value" : 21.65175284837863 }

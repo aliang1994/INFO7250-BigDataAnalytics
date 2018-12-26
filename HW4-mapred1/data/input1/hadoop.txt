@@ -1,0 +1,65 @@
+#find java home
+/usr/libexec/java_home -v
+
+#setting up
+bin/hdfs namenode -format
+
+./stop-dfs.sh
+./start-dfs.sh
+
+#hadoop shell
+hadoop fs -mkdir /lab1
+
+hadoop fs -mv /hadoop.txt /lab1
+hadoop fs -mv /lab1/hadoop.txt /lab1/hadoop_old.txt
+hadoop fs -chmod 755 /lab1/hadoop_old.txt
+hadoop fs -cat /lab1/hadoop_old.txt    // print content to terminal
+hadoop fs -count /lab1
+hadoop fs -df /      //  in bytes
+hadoop fs -df -h /       // in G
+hadoop fs -expunge /lab1/hadoop_old.txt    // delete
+copyToLocal
+cp
+rm
+touchz: create 0 length empty file
+appendToFile
+
+
+hadoop fs -put /Desktop/trial.txt /lab2/book
+hadoop fs -ls /lab1
+hadoop fs -copyFromLocal hadoop.txt /
+
+hadoop jar ipcount.jar homework4.ipCount.Driver /homework4/logs /homework4/logs/output
+
+maven
+<dependency>
+    <groupId>org.apache.hadoop</groupId>
+    <artifactId>hadoop-common</artifactId>
+    <version>2.9.1</version>
+</dependency>
+<dependency>
+    <groupId>org.apache.hadoop</groupId>
+    <artifactId>hadoop-hdfs</artifactId>
+    <version>2.9.1</version>
+</dependency>
+<dependency>
+    <groupId>org.apache.hadoop</groupId>
+    <artifactId>hadoop-client</artifactId>
+    <version>2.9.1</version>
+</dependency>
+<dependency>
+    <groupId>org.apache.hadoop</groupId>
+    <artifactId>hadoop-mapreduce-client-common</artifactId>
+    <version>2.9.1</version>
+</dependency>
+<dependency>
+    <groupId>org.apache.hadoop</groupId>
+    <artifactId>hadoop-mapreduce-client-core</artifactId>
+    <version>2.9.1</version>
+</dependency>
+<dependency>
+    <groupId>org.apache.hadoop</groupId>
+    <artifactId>hadoop-mapreduce-client-jobclient</artifactId>
+    <version>2.9.1</version>
+    <scope>provided</scope>
+</dependency>

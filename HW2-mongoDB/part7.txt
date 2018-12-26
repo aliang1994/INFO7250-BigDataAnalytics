@@ -1,0 +1,92 @@
+# movie lens 1m dataset 
+# Task 2. MapReduce to find the number of males and females in the movielens dataset
+
+var map2 = function () {
+	emit(this.gender, 1);
+};
+
+var reduce2 = function (key, values){
+    return Array.sum(values);
+};
+
+db.users.mapReduce(map2, reduce2,{out:{inline:1}})
+{
+        "results" : [
+                {
+                        "_id" : "F",
+                        "value" : 1709
+                },
+                {
+                        "_id" : "M",
+                        "value" : 4331
+                }
+        ],
+        "timeMillis" : 52,
+        "counts" : {
+                "input" : 6040,
+                "emit" : 6040,
+                "reduce" : 122,
+                "output" : 2
+        },
+        "ok" : 1
+}
+
+# Task 3. MapReduce to find the number of movies rated by different users
+
+var map4 = function () {
+        var value  = {
+                count: 1,
+                movie: this.movieId
+        };
+	emit(this.userId, value);
+};
+
+var reduce4 = function (key, values){
+        var obj = {
+                count: 0,
+                movie: {}
+        }
+        values.forEach(function(value){
+                obj.count += value.count;
+        });
+        return obj;
+};
+
+var final4 = function (key, rval){
+	return rval.count;
+};
+
+db.ratings.mapReduce(map4, reduce4,{out:"users_ratings", finalize:final4})
+{
+        "result" : "users_ratings",
+        "timeMillis" : 9978,
+        "counts" : {
+                "input" : 1000209,
+                "emit" : 1000209,
+                "reduce" : 15990,
+                "output" : 6040
+        },
+        "ok" : 1
+}
+
+db.users_ratings.find().limit(20)
+{ "_id" : "1", "value" : 53 }
+{ "_id" : "10", "value" : 401 }
+{ "_id" : "100", "value" : 76 }
+{ "_id" : "1000", "value" : 84 }
+{ "_id" : "1001", "value" : 377 }
+{ "_id" : "1002", "value" : 66 }
+{ "_id" : "1003", "value" : 29 }
+{ "_id" : "1004", "value" : 481 }
+{ "_id" : "1005", "value" : 92 }
+{ "_id" : "1006", "value" : 44 }
+{ "_id" : "1007", "value" : 32 }
+{ "_id" : "1008", "value" : 50 }
+{ "_id" : "1009", "value" : 52 }
+{ "_id" : "101", "value" : 106 }
+{ "_id" : "1010", "value" : 1004 }
+{ "_id" : "1011", "value" : 37 }
+{ "_id" : "1012", "value" : 55 }
+{ "_id" : "1013", "value" : 46 }
+{ "_id" : "1014", "value" : 39 }
+{ "_id" : "1015", "value" : 1286 }
